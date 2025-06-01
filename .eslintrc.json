@@ -37,11 +37,5 @@
     "react/display-name": "off",
     "react-hooks/exhaustive-deps": "warn"
   },
-  "ignorePatterns": [
-    "node_modules/",
-    ".next/",
-    "out/",
-    "build/",
-    "dist/"
-  ]
+  "ignorePatterns": ["node_modules/", ".next/", "out/", "build/", "dist/"]
 }
