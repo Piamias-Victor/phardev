@@ -1,0 +1,117 @@
+/**
+ * Phardev Design Tokens - CSS Custom Properties
+ * Système de design cohérent avec palette Blue-Purple Gradient Tech
+ */
+
+:root {
+  /* === PALETTE PHARDEV OFFICIELLE === */
+
+  /* Primary - Bleu iOS technologique */
+  --phardev-primary-50: #eff6ff;
+  --phardev-primary-100: #dbeafe;
+  --phardev-primary-200: #bfdbfe;
+  --phardev-primary-300: #93c5fd;
+  --phardev-primary-400: #60a5fa;
+  --phardev-primary-500: #3b82f6;
+  --phardev-primary-600: #2563eb;
+  --phardev-primary-700: #1d4ed8;
+  --phardev-primary-800: #1e40af;
+  --phardev-primary-900: #1e3a8a;
+  --phardev-primary-950: #172554;
+
+  /* Secondary - Violet innovation */
+  --phardev-secondary-50: #f5f3ff;
+  --phardev-secondary-100: #ede9fe;
+  --phardev-secondary-200: #ddd6fe;
+  --phardev-secondary-300: #c4b5fd;
+  --phardev-secondary-400: #a78bfa;
+  --phardev-secondary-500: #8b5cf6;
+  --phardev-secondary-600: #7c3aed;
+  --phardev-secondary-700: #6d28d9;
+  --phardev-secondary-800: #5b21b6;
+  --phardev-secondary-900: #4c1d95;
+  --phardev-secondary-950: #2e1065;
+
+  /* Accent - Cyan premium */
+  --phardev-accent-50: #ecfeff;
+  --phardev-accent-100: #cffafe;
+  --phardev-accent-200: #a5f3fc;
+  --phardev-accent-300: #67e8f9;
+  --phardev-accent-400: #22d3ee;
+  --phardev-accent-500: #06b6d4;
+  --phardev-accent-600: #0891b2;
+  --phardev-accent-700: #0e7490;
+  --phardev-accent-800: #155e75;
+  --phardev-accent-900: #164e63;
+  --phardev-accent-950: #083344;
+
+  /* === SPACING SCALE === */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 0.75rem; /* 12px */
+  --spacing-lg: 1rem; /* 16px */
+  --spacing-xl: 1.5rem; /* 24px */
+  --spacing-2xl: 2rem; /* 32px */
+  --spacing-3xl: 3rem; /* 48px */
+  --spacing-4xl: 4rem; /* 64px */
+  --spacing-5xl: 6rem; /* 96px */
+
+  /* === TYPOGRAPHY SCALE === */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+  --font-size-6xl: 3.75rem; /* 60px */
+
+  /* === SHADOW SYSTEM GLASSMORPHISM === */
+  --shadow-glass-sm: 0 4px 16px rgba(59, 130, 246, 0.08);
+  --shadow-glass: 0 8px 32px rgba(59, 130, 246, 0.12);
+  --shadow-glass-lg: 0 20px 60px rgba(59, 130, 246, 0.15);
+  --shadow-glass-xl: 0 32px 80px rgba(59, 130, 246, 0.18);
+  --shadow-phardev: 0 10px 40px rgba(59, 130, 246, 0.2);
+
+  /* === BORDER RADIUS === */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-2xl: 1.5rem; /* 24px */
+  --radius-full: 9999px;
+
+  /* === BACKDROP BLUR === */
+  --blur-xs: 2px;
+  --blur-sm: 4px;
+  --blur-md: 8px;
+  --blur-lg: 16px;
+  --blur-glass: 20px;
+  --blur-xl: 24px;
+  --blur-2xl: 40px;
+
+  /* === TRANSITIONS === */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* === Z-INDEX === */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+}
+
+/* Dark mode overrides (pour plus tard) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Les tokens seront adaptés pour le dark mode si nécessaire */
+  }
+}

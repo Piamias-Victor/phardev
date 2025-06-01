@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Phardev specific
+.phardev-temp/
+*.phardev.backup
+
+# IDE
+.vscode/launch.json
+.idea/
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
