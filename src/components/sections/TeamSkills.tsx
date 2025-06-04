@@ -1,18 +1,14 @@
 "use client"
 
 import { Container, Grid, Section } from "@/components/layout"
-import { Card, CardContent, CardHeader, Heading, Text } from "@/components/ui"
-import { motion } from "framer-motion"
 import {
-  Award,
-  Brain,
-  CheckCircle,
-  Cloud,
-  Laptop,
-  Shield,
-  Smartphone,
-  Target,
-} from "lucide-react"
+  CertificationGrid,
+  SkillCategory,
+  SkillsTimeline,
+} from "@/components/sections"
+import { Card, CardContent, Heading, Text } from "@/components/ui"
+import { motion } from "framer-motion"
+import { Brain, Cloud, Laptop, Shield, Smartphone } from "lucide-react"
 
 export function TeamSkills() {
   const techCategories = [
@@ -158,48 +154,9 @@ export function TeamSkills() {
               Technologies Maîtrisées
             </Heading>
             <Grid cols={1} responsive={{ md: 2, lg: 4 }} gap="md">
-              {techCategories.map(category => {
-                const Icon = category.icon
-                return (
-                  <Card
-                    key={category.title}
-                    variant="elevated"
-                    hoverable
-                    className="group"
-                  >
-                    <CardHeader>
-                      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 transition-transform duration-200 group-hover:scale-105">
-                        <Icon className="phardev-gradient-text h-6 w-6" />
-                      </div>
-                      {/* ✅ TITRES AVEC GRADIENT COMME AILLEURS */}
-                      <Heading
-                        level={4}
-                        className="phardev-gradient-text font-bold text-gray-900 transition-colors"
-                      >
-                        {category.title}
-                      </Heading>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-2">
-                        {category.skills.map(skill => (
-                          <div
-                            key={skill}
-                            className="flex items-center space-x-2"
-                          >
-                            <CheckCircle className="h-3 w-3 flex-shrink-0 text-green-500" />
-                            <Text
-                              variant="small"
-                              className="text-sm text-gray-700"
-                            >
-                              {skill}
-                            </Text>
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                )
-              })}
+              {techCategories.map(category => (
+                <SkillCategory key={category.title} {...category} />
+              ))}
             </Grid>
           </motion.div>
 
@@ -212,41 +169,7 @@ export function TeamSkills() {
             <Heading level={3} className="mb-6 text-center text-gray-900">
               Certifications Officielles
             </Heading>
-            <Card
-              variant="elevated"
-              className="bg-gradient-phardev border border-blue-100"
-            >
-              <CardContent className="p-6">
-                <Grid cols={1} responsive={{ md: 2, lg: 3 }} gap="md">
-                  {certifications.map(cert => (
-                    <div
-                      key={cert.name}
-                      className="flex items-start space-x-3 rounded-xl bg-white/60 p-3"
-                    >
-                      <Award className="phardev-gradient-text mt-0.5 h-5 w-5 flex-shrink-0" />
-                      <div>
-                        {/* ✅ NOMS CERTIFICATIONS AVEC GRADIENT */}
-                        <Text
-                          variant="small"
-                          className="phardev-gradient-text font-bold"
-                        >
-                          {cert.name}
-                        </Text>
-                        <Text
-                          variant="small"
-                          className="phardev-gradient-text font-semibold"
-                        >
-                          {cert.level}
-                        </Text>
-                        <Text variant="small" className="text-gray-600">
-                          {cert.team}
-                        </Text>
-                      </div>
-                    </div>
-                  ))}
-                </Grid>
-              </CardContent>
-            </Card>
+            <CertificationGrid certifications={certifications} />
           </motion.div>
 
           <motion.div
@@ -255,7 +178,6 @@ export function TeamSkills() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            {/* ✅ TITRE AVEC GRADIENT */}
             <Heading
               level={3}
               className="phardev-gradient-text mb-6 text-center font-bold"
@@ -287,52 +209,13 @@ export function TeamSkills() {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            {/* ✅ TITRE AVEC GRADIENT */}
             <Heading
               level={3}
               className="phardev-gradient-text mb-6 text-center font-bold"
             >
               Timeline Succès Collectifs
             </Heading>
-            <div className="relative">
-              <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 transform rounded-full bg-gradient-to-b from-blue-500 to-purple-500"></div>
-              <div className="space-y-8">
-                {timeline.map((milestone, index) => (
-                  <div
-                    key={milestone.year}
-                    className={`flex items-center ${index % 2 === 0 ? "justify-start" : "justify-end"}`}
-                  >
-                    <div
-                      className={`w-5/12 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}
-                    >
-                      <div className="rounded-xl border border-gray-100 bg-white p-4 shadow-md">
-                        <div className="mb-2 flex items-center space-x-2">
-                          <Target className="phardev-gradient-text h-4 w-4" />
-                          {/* ✅ ANNÉES AVEC GRADIENT */}
-                          <Text
-                            variant="small"
-                            className="phardev-gradient-text font-bold"
-                          >
-                            {milestone.year}
-                          </Text>
-                        </div>
-                        {/* ✅ ACHIEVEMENTS AVEC GRADIENT */}
-                        <Text
-                          variant="small"
-                          className="phardev-gradient-text mb-1 font-bold"
-                        >
-                          {milestone.achievement}
-                        </Text>
-                        <Text variant="small" className="text-gray-600">
-                          {milestone.impact}
-                        </Text>
-                      </div>
-                    </div>
-                    <div className="absolute left-1/2 h-4 w-4 -translate-x-1/2 transform rounded-full border-4 border-white bg-gradient-to-r from-blue-500 to-purple-500 shadow-md"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <SkillsTimeline milestones={timeline} />
           </motion.div>
         </div>
       </Container>

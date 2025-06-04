@@ -12,6 +12,7 @@ export {
   type CardProps,
 } from "./Card"
 export { Link, type LinkProps } from "./Link"
+export { ProjectCard } from "./ProjectCard"
 export { Heading, Text, type HeadingProps, type TextProps } from "./Typography"
 
 export const UI_COMPONENTS_READY = true
