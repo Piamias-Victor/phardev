@@ -6,7 +6,7 @@ import {
   ProjectsShowcase,
   TestimonialsSection,
   ValuesSection,
-} from "@/components/sections"
+} from "@/components/sections/home"
 import { useEffect, useState } from "react"
 
 export default function HomePage() {

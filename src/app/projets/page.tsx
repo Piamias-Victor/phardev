@@ -1,4 +1,4 @@
-import { HeaderProjects, ProjectsGrid } from "@/components/sections"
+import { HeaderProjects, ProjectsGrid } from "@/components/sections/projects"
 import { generateMetadata } from "@/lib/seo/metadata"
 import type { Metadata } from "next"
 

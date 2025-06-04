@@ -1,11 +1,12 @@
 "use client"
 
 import { Container, Grid, Section } from "@/components/layout"
-import { Button, Heading, Link, Text } from "@/components/ui"
+import { Button, Heading, Text } from "@/components/ui"
 import { FOOTER_LINKS } from "@/lib/constants/navigation"
 import { PHARDEV_CONFIG } from "@/lib/constants/phardev"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react"
+import Link from "next/link"
 
 /**
  * Footer Component Phardev
@@ -81,7 +82,6 @@ const Footer = () => {
                   >
                     <Link
                       href={href}
-                      external
                       className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-gray-600 no-underline transition-all duration-200 hover:bg-blue-500 hover:text-white"
                     >
                       <Icon className="h-5 w-5" />

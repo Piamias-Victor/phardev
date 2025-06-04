@@ -1,4 +1,8 @@
-import { HeaderTeam, TeamProfiles, TeamSkills } from "@/components/sections"
+import {
+  HeaderTeam,
+  TeamProfiles,
+  TeamSkills,
+} from "@/components/sections/team"
 import { generateMetadata } from "@/lib/seo/metadata"
 import type { Metadata } from "next"
 

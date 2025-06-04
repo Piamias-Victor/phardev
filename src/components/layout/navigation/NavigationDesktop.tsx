@@ -5,8 +5,9 @@
 
 "use client"
 
-import { Button, Link } from "@/components/ui"
+import { Button } from "@/components/ui"
 import { MAIN_NAVIGATION } from "@/lib/constants/navigation"
+import Link from "next/link"
 
 export function NavigationDesktop() {
   return (

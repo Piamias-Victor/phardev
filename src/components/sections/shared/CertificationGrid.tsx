@@ -2,7 +2,7 @@
 
 import { Card, CardContent, Text } from "@/components/ui"
 import { Award } from "lucide-react"
-import { Grid } from "../layout"
+import { Grid } from "../../layout"
 
 interface Certification {
   name: string
