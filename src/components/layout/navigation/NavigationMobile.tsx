@@ -6,10 +6,11 @@
 "use client"
 
 import { Container } from "@/components/layout"
-import { Button, Link } from "@/components/ui"
+import { Button } from "@/components/ui"
 import { MAIN_NAVIGATION } from "@/lib/constants/navigation"
 import { AnimatePresence, motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import Link from "next/link"
 
 interface NavigationMobileProps {
   isMobileMenuOpen: boolean

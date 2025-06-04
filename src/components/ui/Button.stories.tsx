@@ -4,7 +4,7 @@
  */
 
 import { ArrowRight, Download, Heart, Settings } from "lucide-react"
-import { Button } from "./Button"
+import { Button } from "./forms"
 
 export function ButtonExamples() {
   return (
