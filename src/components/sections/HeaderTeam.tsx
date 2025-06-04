@@ -12,25 +12,21 @@ export function HeaderTeam() {
       icon: Users,
       value: "4",
       label: "Experts passionnés",
-      color: "text-phardev-primary-500",
     },
     {
       icon: Brain,
       value: "50+",
       label: "Années expérience cumulées",
-      color: "text-phardev-secondary-500",
     },
     {
       icon: Code,
       value: "200+",
       label: "Projets réalisés ensemble",
-      color: "text-phardev-accent-500",
     },
     {
       icon: Award,
       value: "95%",
       label: "Satisfaction client équipe",
-      color: "text-green-500",
     },
   ]
 
@@ -73,11 +69,11 @@ export function HeaderTeam() {
             className="mx-auto mb-8 max-w-3xl text-base text-gray-600 lg:text-lg"
           >
             Notre force ? L&apos;alliance unique entre{" "}
-            <span className="text-phardev-primary-600 font-semibold">
+            <span className="phardev-gradient-text font-semibold">
               expertise métier pharmaceutique
             </span>{" "}
             et{" "}
-            <span className="text-phardev-secondary-600 font-semibold">
+            <span className="phardev-gradient-text font-semibold">
               maîtrise technologique de pointe
             </span>
             . Chaque membre apporte sa passion et son savoir-faire pour créer
@@ -102,7 +98,7 @@ export function HeaderTeam() {
               </Text>
               <Text
                 variant="small"
-                className="text-phardev-primary-600 mt-3 text-center font-semibold"
+                className="phardev-gradient-text mt-3 text-center font-semibold"
               >
                 — L&apos;équipe {PHARDEV_CONFIG.name}
               </Text>
@@ -110,7 +106,7 @@ export function HeaderTeam() {
           </motion.div>
         </motion.div>
 
-        {/* Stats Équipe */}
+        {/* Stats Équipe - AVEC COULEURS COMME HERO */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -128,11 +124,12 @@ export function HeaderTeam() {
                 className="text-center"
               >
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/30 bg-white/20 backdrop-blur-sm">
-                  <Icon className={`h-8 w-8 ${stat.color}`} />
+                  <Icon className="phardev-gradient-text h-8 w-8" />
                 </div>
+                {/* ✅ VALEURS AVEC GRADIENT COMME HERO */}
                 <Heading
                   level={3}
-                  className="mb-2 text-2xl font-bold text-gray-900 lg:text-3xl"
+                  className="phardev-gradient-text mb-2 text-2xl font-bold lg:text-3xl"
                 >
                   {stat.value}
                 </Heading>

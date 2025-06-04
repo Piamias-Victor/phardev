@@ -32,8 +32,6 @@ export function ProjectsShowcase() {
         { label: "Délai réalisation", value: "8 semaines" },
       ],
       icon: ShoppingCart,
-      iconColor: "text-phardev-primary-500",
-      iconBg: "bg-phardev-primary-50",
     },
     {
       id: 2,
@@ -47,8 +45,6 @@ export function ProjectsShowcase() {
         { label: "Délai réalisation", value: "12 semaines" },
       ],
       icon: Smartphone,
-      iconColor: "text-phardev-secondary-500",
-      iconBg: "bg-phardev-secondary-50",
     },
     {
       id: 3,
@@ -62,8 +58,6 @@ export function ProjectsShowcase() {
         { label: "Délai réalisation", value: "16 semaines" },
       ],
       icon: BarChart3,
-      iconColor: "text-phardev-accent-500",
-      iconBg: "bg-phardev-accent-50",
     },
   ]
 
@@ -102,14 +96,12 @@ export function ProjectsShowcase() {
               >
                 <Card variant="elevated" hoverable className="group h-full">
                   <CardHeader>
-                    <div
-                      className={`h-12 w-12 rounded-xl ${project.iconBg} mb-4 flex items-center justify-center transition-transform duration-200 group-hover:scale-105`}
-                    >
-                      <Icon className={`h-6 w-6 ${project.iconColor}`} />
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 transition-transform duration-200 group-hover:scale-105">
+                      <Icon className="phardev-gradient-text h-6 w-6" />
                     </div>
                     <Heading
                       level={3}
-                      className="group-hover:text-phardev-primary-700 mb-3 text-gray-900 transition-colors duration-200"
+                      className="phardev-gradient-text mb-3 text-gray-900 transition-colors duration-200"
                     >
                       {project.title}
                     </Heading>
@@ -129,9 +121,11 @@ export function ProjectsShowcase() {
                         {project.technologies.map(tech => (
                           <span
                             key={tech}
-                            className="bg-phardev-secondary-50 text-phardev-secondary-700 border-phardev-secondary-200 rounded-full border px-3 py-1.5 text-sm font-medium"
+                            className="bg-gradient-phardev rounded-full border border-blue-200 px-3 py-1.5 text-sm font-medium"
                           >
-                            {tech}
+                            <span className="phardev-gradient-text">
+                              {tech}
+                            </span>
                           </span>
                         ))}
                       </div>
@@ -152,7 +146,7 @@ export function ProjectsShowcase() {
                           </div>
                           <Text
                             variant="small"
-                            className="text-phardev-primary-600 font-semibold"
+                            className="phardev-gradient-text font-semibold"
                           >
                             {metric.value}
                           </Text>

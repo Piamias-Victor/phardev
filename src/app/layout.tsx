@@ -92,7 +92,7 @@ export default function RootLayout({
         {/* Skip to main content for accessibility */}
         <a
           href="#main-content"
-          className="sr-only z-50 bg-blue-600 p-4 text-white focus:not-sr-only focus:absolute focus:top-0 focus:left-0"
+          className="bg-gradient-phardev sr-only z-50 p-4 text-white focus:not-sr-only focus:absolute focus:top-0 focus:left-0"
         >
           Aller au contenu principal
         </a>

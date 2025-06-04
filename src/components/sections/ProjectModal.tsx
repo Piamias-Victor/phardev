@@ -32,7 +32,6 @@ export function ProjectModal({
   hasPrevious,
   hasNext,
 }: ProjectModalProps) {
-  // Fermeture avec Escape
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose()
@@ -53,7 +52,6 @@ export function ProjectModal({
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-50 overflow-hidden">
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -62,7 +60,6 @@ export function ProjectModal({
             onClick={onClose}
           />
 
-          {/* Modal Content */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -73,12 +70,11 @@ export function ProjectModal({
             <div className="mx-auto max-w-4xl">
               <Card variant="gradient" className="relative">
                 <CardContent className="p-4 lg:p-8">
-                  {/* Header Modal */}
                   <div className="mb-6 flex items-start justify-between">
                     <div>
                       <Text
                         variant="small"
-                        className="text-phardev-secondary-600 mb-2 font-semibold tracking-wide uppercase"
+                        className="phardev-gradient-text mb-2 font-semibold tracking-wide uppercase"
                       >
                         {project.category}
                       </Text>
@@ -100,9 +96,7 @@ export function ProjectModal({
                   </div>
 
                   <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                    {/* Contenu Principal */}
                     <div className="space-y-6">
-                      {/* Challenge */}
                       <div>
                         <Heading
                           level={3}
@@ -118,7 +112,6 @@ export function ProjectModal({
                         </Text>
                       </div>
 
-                      {/* Solution */}
                       <div>
                         <Heading
                           level={3}
@@ -133,20 +126,20 @@ export function ProjectModal({
                           {project.solution}
                         </Text>
 
-                        {/* Technologies */}
                         <div className="flex flex-wrap gap-1.5 lg:gap-2">
                           {project.technologies.map(tech => (
                             <span
                               key={tech}
-                              className="bg-phardev-secondary-50 text-phardev-secondary-700 border-phardev-secondary-200 rounded-full border px-2 py-1 text-xs font-medium lg:px-3 lg:py-1.5 lg:text-sm"
+                              className="bg-gradient-phardev rounded-full border border-blue-200 px-2 py-1 text-xs font-medium lg:px-3 lg:py-1.5 lg:text-sm"
                             >
-                              {tech}
+                              <span className="phardev-gradient-text">
+                                {tech}
+                              </span>
                             </span>
                           ))}
                         </div>
                       </div>
 
-                      {/* Impact */}
                       <div>
                         <Heading
                           level={3}
@@ -161,7 +154,6 @@ export function ProjectModal({
                           {project.impact}
                         </Text>
 
-                        {/* Résultats */}
                         <div className="space-y-2">
                           {project.results.map(result => (
                             <div
@@ -179,7 +171,7 @@ export function ProjectModal({
                               </div>
                               <Text
                                 variant="small"
-                                className="text-phardev-primary-600 text-xs font-semibold lg:text-sm"
+                                className="phardev-gradient-text text-xs font-semibold lg:text-sm"
                               >
                                 {result.value}
                               </Text>
@@ -189,9 +181,7 @@ export function ProjectModal({
                       </div>
                     </div>
 
-                    {/* Sidebar Info */}
                     <div className="space-y-6">
-                      {/* Screenshot Placeholder */}
                       <div className="flex aspect-video items-center justify-center rounded-xl bg-gradient-to-br from-gray-100 to-gray-200">
                         <div className="text-center">
                           <ExternalLink className="mx-auto mb-2 h-6 w-6 text-gray-400 lg:h-8 lg:w-8" />
@@ -204,7 +194,6 @@ export function ProjectModal({
                         </div>
                       </div>
 
-                      {/* Infos Projet */}
                       <div className="rounded-xl bg-gray-50 p-4">
                         <Heading
                           level={4}
@@ -258,8 +247,7 @@ export function ProjectModal({
                         </div>
                       </div>
 
-                      {/* CTA Contact */}
-                      <div className="rounded-xl border border-blue-100 bg-gradient-to-r from-blue-50 to-purple-50 p-4">
+                      <div className="bg-gradient-phardev rounded-xl border border-blue-100 p-4">
                         <Heading
                           level={4}
                           className="mb-2 text-base text-gray-900"
@@ -284,9 +272,7 @@ export function ProjectModal({
                     </div>
                   </div>
 
-                  {/* Navigation Footer - Mobile Optimisé */}
                   <div className="mt-6 flex items-center justify-between border-t border-gray-200 pt-4 lg:mt-8 lg:pt-6">
-                    {/* Flèche Précédent */}
                     <Button
                       variant="ghost"
                       size="sm"
@@ -297,12 +283,10 @@ export function ProjectModal({
                       <ArrowLeft className="h-4 w-4" />
                     </Button>
 
-                    {/* Compteur Centré */}
                     <Text variant="small" className="font-medium text-gray-500">
                       {project.id} / 5
                     </Text>
 
-                    {/* Flèche Suivant */}
                     <Button
                       variant="ghost"
                       size="sm"

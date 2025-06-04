@@ -40,7 +40,6 @@ export function CTASection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Intégrer API contact
     console.log("Form submitted:", formData)
   }
 
@@ -57,7 +56,7 @@ export function CTASection() {
             className="text-center lg:text-left"
           >
             <div className="mb-6 inline-flex items-center space-x-2 rounded-full border border-white/30 bg-white/20 px-4 py-2 backdrop-blur-sm">
-              <Rocket className="text-phardev-primary-600 h-4 w-4" />
+              <Rocket className="phardev-gradient-text h-4 w-4" />
               <Text
                 variant="small"
                 className="phardev-gradient-text font-semibold"
@@ -109,13 +108,13 @@ export function CTASection() {
             {/* Contact Direct */}
             <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
               <div className="flex items-center space-x-2">
-                <Phone className="text-phardev-primary-500 h-4 w-4" />
+                <Phone className="phardev-gradient-text h-4 w-4" />
                 <Text variant="small" className="text-gray-600">
                   01 XX XX XX XX
                 </Text>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="text-phardev-primary-500 h-4 w-4" />
+                <Mail className="phardev-gradient-text h-4 w-4" />
                 <Text variant="small" className="text-gray-600">
                   contact@phardev.fr
                 </Text>
@@ -153,7 +152,7 @@ export function CTASection() {
                       onChange={e =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="focus:border-phardev-primary-500 focus:ring-phardev-primary-200 w-full rounded-xl border border-gray-200 px-4 py-3 transition-all duration-200 focus:ring-2 focus:outline-none"
+                      className="w-full rounded-xl border border-gray-200 px-4 py-3 transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none"
                       required
                     />
                   </div>
@@ -166,7 +165,7 @@ export function CTASection() {
                       onChange={e =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      className="focus:border-phardev-primary-500 focus:ring-phardev-primary-200 w-full rounded-xl border border-gray-200 px-4 py-3 transition-all duration-200 focus:ring-2 focus:outline-none"
+                      className="w-full rounded-xl border border-gray-200 px-4 py-3 transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none"
                       required
                     />
                   </div>
@@ -180,7 +179,7 @@ export function CTASection() {
                           projectType: e.target.value,
                         })
                       }
-                      className="focus:border-phardev-primary-500 focus:ring-phardev-primary-200 w-full rounded-xl border border-gray-200 px-4 py-3 transition-all duration-200 focus:ring-2 focus:outline-none"
+                      className="w-full rounded-xl border border-gray-200 px-4 py-3 transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none"
                     >
                       {projectTypes.map(type => (
                         <option key={type.value} value={type.value}>

@@ -24,8 +24,6 @@ export function TestimonialsSection() {
         "Phardev a transformé notre gestion quotidienne. Leur solution e-commerce nous a permis d'augmenter nos ventes de 180% en 6 mois.",
       rating: 5,
       project: "E-commerce + Gestion Stock",
-      iconColor: "text-phardev-primary-500",
-      iconBg: "bg-phardev-primary-50",
     },
     {
       id: 2,
@@ -36,8 +34,6 @@ export function TestimonialsSection() {
         "L'expertise métier de Phardev est remarquable. Ils comprennent parfaitement nos contraintes réglementaires.",
       rating: 5,
       project: "Analytics BI Multi-sites",
-      iconColor: "text-phardev-secondary-500",
-      iconBg: "bg-phardev-secondary-50",
     },
     {
       id: 3,
@@ -48,8 +44,6 @@ export function TestimonialsSection() {
         "Le système IoT développé par Phardev révolutionne notre gestion des médicaments. Investissement rentabilisé rapidement.",
       rating: 5,
       project: "Armoire Connectée IoT",
-      iconColor: "text-phardev-accent-500",
-      iconBg: "bg-phardev-accent-50",
     },
   ]
 
@@ -94,14 +88,12 @@ export function TestimonialsSection() {
             >
               <Card variant="elevated" hoverable className="group h-full">
                 <CardHeader>
-                  <div
-                    className={`h-12 w-12 rounded-xl ${testimonial.iconBg} mb-4 flex items-center justify-center transition-transform duration-200 group-hover:scale-105`}
-                  >
-                    <Quote className={`h-6 w-6 ${testimonial.iconColor}`} />
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 transition-transform duration-200 group-hover:scale-105">
+                    <Quote className="phardev-gradient-text h-6 w-6" />
                   </div>
                   <Heading
                     level={3}
-                    className="group-hover:text-phardev-primary-700 mb-3 text-gray-900 transition-colors duration-200"
+                    className="phardev-gradient-text mb-3 text-gray-900 transition-colors duration-200"
                   >
                     {testimonial.name}
                   </Heading>
@@ -143,8 +135,10 @@ export function TestimonialsSection() {
                       </Text>
                     </div>
                     <div className="mt-3">
-                      <span className="bg-phardev-secondary-50 text-phardev-secondary-700 border-phardev-secondary-200 rounded-full border px-3 py-1.5 text-sm font-medium">
-                        {testimonial.project}
+                      <span className="bg-gradient-phardev rounded-full border border-blue-200 px-3 py-1.5 text-sm font-medium">
+                        <span className="phardev-gradient-text">
+                          {testimonial.project}
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -160,7 +154,7 @@ export function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="rounded-2xl border border-blue-100 bg-gradient-to-r from-blue-50 to-purple-50 p-8"
+          className="bg-gradient-phardev rounded-2xl border border-blue-100 p-8"
         >
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {trustSignals.map((signal, index) => {
@@ -175,12 +169,12 @@ export function TestimonialsSection() {
                   className="flex flex-col items-center text-center"
                 >
                   <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm">
-                    <Icon className="text-phardev-primary-500 h-6 w-6" />
+                    <Icon className="phardev-gradient-text h-6 w-6" />
                   </div>
                   <div className="flex min-h-[60px] flex-col justify-center">
                     <Heading
                       level={3}
-                      className="mb-1 text-2xl font-bold text-gray-900"
+                      className="phardev-gradient-text mb-1 text-2xl font-bold"
                     >
                       {signal.value}
                     </Heading>

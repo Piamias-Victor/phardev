@@ -17,8 +17,6 @@ export function ValuesSection() {
         "Processus métier optimisés",
         "Formation équipes",
       ],
-      iconColor: "text-phardev-primary-500",
-      iconBg: "bg-phardev-primary-50",
     },
     {
       icon: Rocket,
@@ -30,8 +28,6 @@ export function ValuesSection() {
         "IoT & capteurs connectés",
         "Analytics avancés",
       ],
-      iconColor: "text-phardev-secondary-500",
-      iconBg: "bg-phardev-secondary-50",
     },
     {
       icon: TrendingUp,
@@ -43,8 +39,6 @@ export function ValuesSection() {
         "Gains temps -40%",
         "Erreurs réduites -70%",
       ],
-      iconColor: "text-phardev-accent-500",
-      iconBg: "bg-phardev-accent-50",
     },
   ]
 
@@ -84,14 +78,12 @@ export function ValuesSection() {
               >
                 <Card variant="elevated" hoverable className="group h-full">
                   <CardHeader>
-                    <div
-                      className={`h-12 w-12 rounded-xl ${pillar.iconBg} mb-4 flex items-center justify-center transition-transform duration-200 group-hover:scale-105`}
-                    >
-                      <Icon className={`h-6 w-6 ${pillar.iconColor}`} />
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 transition-transform duration-200 group-hover:scale-105">
+                      <Icon className="phardev-gradient-text h-6 w-6" />
                     </div>
                     <Heading
                       level={3}
-                      className="group-hover:text-phardev-primary-700 mb-3 text-gray-900 transition-colors duration-200"
+                      className="phardev-gradient-text mb-3 text-gray-900 transition-colors duration-200"
                     >
                       {pillar.title}
                     </Heading>

@@ -45,8 +45,8 @@ export function ProjectsGrid() {
         "Transformation complète de la présence digitale avec un site moderne qui attire et convertit les visiteurs en clients fidèles.",
       screenshots: [],
       icon: Globe,
-      iconColor: "text-phardev-primary-500",
-      iconBg: "bg-phardev-primary-50",
+      iconColor: "phardev-gradient-text",
+      iconBg: "bg-gradient-to-br from-blue-50 to-purple-50",
     },
     {
       id: 2,
@@ -70,8 +70,8 @@ export function ProjectsGrid() {
         "Révolution du modèle économique avec diversification des revenus et optimisation opérationnelle majeure.",
       screenshots: [],
       icon: ShoppingCart,
-      iconColor: "text-phardev-secondary-500",
-      iconBg: "bg-phardev-secondary-50",
+      iconColor: "phardev-gradient-text",
+      iconBg: "bg-gradient-to-br from-blue-50 to-purple-50",
     },
     {
       id: 3,
@@ -95,8 +95,8 @@ export function ProjectsGrid() {
         "Transformation digitale complète de la gestion stock avec économies substantielles et sécurité renforcée.",
       screenshots: [],
       icon: Smartphone,
-      iconColor: "text-phardev-accent-500",
-      iconBg: "bg-phardev-accent-50",
+      iconColor: "phardev-gradient-text",
+      iconBg: "bg-gradient-to-br from-blue-50 to-purple-50",
     },
     {
       id: 4,
@@ -120,8 +120,8 @@ export function ProjectsGrid() {
         "Accélération drastique du processus commercial avec précision maximale et satisfaction client renforcée.",
       screenshots: [],
       icon: Bot,
-      iconColor: "text-phardev-primary-500",
-      iconBg: "bg-phardev-primary-50",
+      iconColor: "phardev-gradient-text",
+      iconBg: "bg-gradient-to-br from-blue-50 to-purple-50",
     },
     {
       id: 5,
@@ -145,16 +145,14 @@ export function ProjectsGrid() {
         "Transformation en organisation data-driven avec insights actionnables et optimisation performance continue.",
       screenshots: [],
       icon: BarChart3,
-      iconColor: "text-phardev-secondary-500",
-      iconBg: "bg-phardev-secondary-50",
+      iconColor: "phardev-gradient-text",
+      iconBg: "bg-gradient-to-br from-blue-50 to-purple-50",
     },
   ]
 
   const handleProjectClick = (project: ProjectModalData) => {
     openModal(project)
   }
-
-  // Remplacer les handlers dans ProjectsGrid.tsx ligne 150-170
 
   const handlePrevious = () => {
     if (!selectedProject) return
@@ -213,13 +211,13 @@ export function ProjectsGrid() {
                       </div>
                       <Text
                         variant="small"
-                        className="text-phardev-secondary-600 mb-2 font-semibold tracking-wide uppercase"
+                        className="mb-2 font-semibold tracking-wide uppercase"
                       >
                         {project.category}
                       </Text>
                       <Heading
                         level={3}
-                        className="group-hover:text-phardev-primary-700 mb-3 text-gray-900 transition-colors duration-200"
+                        className="phardev-gradient-text mb-3 text-gray-900 transition-colors duration-200"
                       >
                         {project.title}
                       </Heading>
@@ -238,9 +236,11 @@ export function ProjectsGrid() {
                           {project.technologies.slice(0, 3).map(tech => (
                             <span
                               key={tech}
-                              className="bg-phardev-secondary-50 text-phardev-secondary-700 border-phardev-secondary-200 rounded-full border px-2 py-1 text-xs font-medium lg:px-3 lg:py-1.5 lg:text-sm"
+                              className="bg-gradient-phardev rounded-full border border-blue-200 px-2 py-1 text-xs font-medium lg:px-3 lg:py-1.5 lg:text-sm"
                             >
-                              {tech}
+                              <span className="phardev-gradient-text">
+                                {tech}
+                              </span>
                             </span>
                           ))}
                           {project.technologies.length > 3 && (
@@ -268,7 +268,7 @@ export function ProjectsGrid() {
                             </div>
                             <Text
                               variant="small"
-                              className="text-phardev-primary-600 text-xs font-semibold lg:text-sm"
+                              className="phardev-gradient-text text-xs font-semibold lg:text-sm"
                             >
                               {result.value}
                             </Text>

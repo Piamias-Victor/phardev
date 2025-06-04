@@ -96,7 +96,7 @@ export function HeaderProjects() {
               placeholder="Rechercher..."
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
-              className="focus:border-phardev-primary-500 focus:ring-phardev-primary-200 w-full rounded-xl border border-white/50 bg-white/80 py-2.5 pr-4 pl-9 text-sm backdrop-blur-sm transition-all duration-200 focus:ring-2 focus:outline-none lg:py-3 lg:pl-10 lg:text-base"
+              className="w-full rounded-xl border border-white/50 bg-white/80 py-2.5 pr-4 pl-9 text-sm backdrop-blur-sm transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none lg:py-3 lg:pl-10 lg:text-base"
             />
           </div>
         </motion.div>
@@ -132,7 +132,7 @@ export function HeaderProjects() {
                     className={`ml-1 rounded-full px-1 py-0.5 text-xs lg:ml-2 lg:px-1.5 ${
                       isActive
                         ? "bg-white/20 text-white"
-                        : "bg-phardev-secondary-100 text-phardev-secondary-700"
+                        : "bg-purple-100 text-purple-700"
                     }`}
                   >
                     {category.count}

@@ -19,8 +19,6 @@ export function TeamSkills() {
     {
       title: "Frontend Excellence",
       icon: Laptop,
-      color: "text-phardev-primary-500",
-      bg: "bg-phardev-primary-50",
       skills: [
         "React 18",
         "Next.js 14",
@@ -33,8 +31,6 @@ export function TeamSkills() {
     {
       title: "Backend & Cloud",
       icon: Cloud,
-      color: "text-phardev-secondary-500",
-      bg: "bg-phardev-secondary-50",
       skills: [
         "Node.js",
         "Python",
@@ -47,8 +43,6 @@ export function TeamSkills() {
     {
       title: "Intelligence Artificielle",
       icon: Brain,
-      color: "text-phardev-accent-500",
-      bg: "bg-phardev-accent-50",
       skills: [
         "Machine Learning",
         "TensorFlow",
@@ -61,8 +55,6 @@ export function TeamSkills() {
     {
       title: "Mobile & IoT",
       icon: Smartphone,
-      color: "text-phardev-accent-500",
-      bg: "bg-phardev-accent-50",
       skills: [
         "React Native",
         "Flutter",
@@ -176,14 +168,13 @@ export function TeamSkills() {
                     className="group"
                   >
                     <CardHeader>
-                      <div
-                        className={`h-12 w-12 ${category.bg} mb-3 flex items-center justify-center rounded-xl transition-transform duration-200 group-hover:scale-105`}
-                      >
-                        <Icon className={`h-6 w-6 ${category.color}`} />
+                      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 transition-transform duration-200 group-hover:scale-105">
+                        <Icon className="phardev-gradient-text h-6 w-6" />
                       </div>
+                      {/* ✅ TITRES AVEC GRADIENT COMME AILLEURS */}
                       <Heading
                         level={4}
-                        className="group-hover:text-phardev-primary-700 text-gray-900 transition-colors"
+                        className="phardev-gradient-text font-bold text-gray-900 transition-colors"
                       >
                         {category.title}
                       </Heading>
@@ -223,7 +214,7 @@ export function TeamSkills() {
             </Heading>
             <Card
               variant="elevated"
-              className="border border-blue-100 bg-gradient-to-r from-blue-50 to-purple-50"
+              className="bg-gradient-phardev border border-blue-100"
             >
               <CardContent className="p-6">
                 <Grid cols={1} responsive={{ md: 2, lg: 3 }} gap="md">
@@ -232,17 +223,18 @@ export function TeamSkills() {
                       key={cert.name}
                       className="flex items-start space-x-3 rounded-xl bg-white/60 p-3"
                     >
-                      <Award className="text-phardev-secondary-500 mt-0.5 h-5 w-5 flex-shrink-0" />
+                      <Award className="phardev-gradient-text mt-0.5 h-5 w-5 flex-shrink-0" />
                       <div>
+                        {/* ✅ NOMS CERTIFICATIONS AVEC GRADIENT */}
                         <Text
                           variant="small"
-                          className="font-semibold text-gray-900"
+                          className="phardev-gradient-text font-bold"
                         >
                           {cert.name}
                         </Text>
                         <Text
                           variant="small"
-                          className="text-phardev-primary-600"
+                          className="phardev-gradient-text font-semibold"
                         >
                           {cert.level}
                         </Text>
@@ -263,7 +255,11 @@ export function TeamSkills() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <Heading level={3} className="mb-6 text-center text-gray-900">
+            {/* ✅ TITRE AVEC GRADIENT */}
+            <Heading
+              level={3}
+              className="phardev-gradient-text mb-6 text-center font-bold"
+            >
               Expertise Pharmaceutique
             </Heading>
             <Card variant="elevated">
@@ -271,7 +267,7 @@ export function TeamSkills() {
                 <Grid cols={1} responsive={{ md: 2 }} gap="md">
                   {pharmaExpertise.map(expertise => (
                     <div key={expertise} className="flex items-start space-x-3">
-                      <Shield className="text-phardev-accent-500 mt-1 h-4 w-4 flex-shrink-0" />
+                      <Shield className="phardev-gradient-text mt-1 h-4 w-4 flex-shrink-0" />
                       <Text
                         variant="small"
                         className="leading-relaxed text-gray-700"
@@ -291,11 +287,15 @@ export function TeamSkills() {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <Heading level={3} className="mb-6 text-center text-gray-900">
+            {/* ✅ TITRE AVEC GRADIENT */}
+            <Heading
+              level={3}
+              className="phardev-gradient-text mb-6 text-center font-bold"
+            >
               Timeline Succès Collectifs
             </Heading>
             <div className="relative">
-              <div className="from-phardev-primary-500 to-phardev-secondary-500 absolute left-1/2 h-full w-1 -translate-x-1/2 transform rounded-full bg-gradient-to-b"></div>
+              <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 transform rounded-full bg-gradient-to-b from-blue-500 to-purple-500"></div>
               <div className="space-y-8">
                 {timeline.map((milestone, index) => (
                   <div
@@ -307,17 +307,19 @@ export function TeamSkills() {
                     >
                       <div className="rounded-xl border border-gray-100 bg-white p-4 shadow-md">
                         <div className="mb-2 flex items-center space-x-2">
-                          <Target className="text-phardev-primary-500 h-4 w-4" />
+                          <Target className="phardev-gradient-text h-4 w-4" />
+                          {/* ✅ ANNÉES AVEC GRADIENT */}
                           <Text
                             variant="small"
-                            className="text-phardev-primary-600 font-bold"
+                            className="phardev-gradient-text font-bold"
                           >
                             {milestone.year}
                           </Text>
                         </div>
+                        {/* ✅ ACHIEVEMENTS AVEC GRADIENT */}
                         <Text
                           variant="small"
-                          className="mb-1 font-semibold text-gray-900"
+                          className="phardev-gradient-text mb-1 font-bold"
                         >
                           {milestone.achievement}
                         </Text>
@@ -326,7 +328,7 @@ export function TeamSkills() {
                         </Text>
                       </div>
                     </div>
-                    <div className="bg-phardev-primary-500 absolute left-1/2 h-4 w-4 -translate-x-1/2 transform rounded-full border-4 border-white shadow-md"></div>
+                    <div className="absolute left-1/2 h-4 w-4 -translate-x-1/2 transform rounded-full border-4 border-white bg-gradient-to-r from-blue-500 to-purple-500 shadow-md"></div>
                   </div>
                 ))}
               </div>
