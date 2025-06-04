@@ -35,7 +35,7 @@ export function TeamProfiles() {
       skills: ["Machine Learning", "Analytics BI"],
       achievements: ["PhD Machine Learning", "15+ projets IA santé"],
       pharmaKnowledge:
-        "Prédiction demande médicaments • Analytics rotation stocks • IA diagnostic aide",
+        "Prédiction demande médicaments • Analytics rotation stocks",
     },
     {
       name: "Sophie Lemoine",

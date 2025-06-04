@@ -1,128 +1,20 @@
 "use client"
 
-import { Container, Grid, Section } from "@/components/layout"
-import {
-  CertificationGrid,
-  SkillCategory,
-  SkillsTimeline,
-} from "@/components/sections"
-import { Card, CardContent, Heading, Text } from "@/components/ui"
+import { Container, Section } from "@/components/layout"
+import { Heading, Text } from "@/components/ui"
 import { motion } from "framer-motion"
-import { Brain, Cloud, Laptop, Shield, Smartphone } from "lucide-react"
+import {
+  SkillsCategories,
+  SkillsCertifications,
+  SkillsExpertise,
+  SkillsTimeline,
+} from "./TeamSkills/"
 
+/**
+ * Team Skills Section - Composition des compétences équipe
+ * Responsabilité : Orchestration des sous-sections skills
+ */
 export function TeamSkills() {
-  const techCategories = [
-    {
-      title: "Frontend Excellence",
-      icon: Laptop,
-      skills: [
-        "React 18",
-        "Next.js 14",
-        "TypeScript",
-        "Tailwind CSS",
-        "Framer Motion",
-        "Three.js",
-      ],
-    },
-    {
-      title: "Backend & Cloud",
-      icon: Cloud,
-      skills: [
-        "Node.js",
-        "Python",
-        "AWS",
-        "PostgreSQL",
-        "Docker",
-        "Kubernetes",
-      ],
-    },
-    {
-      title: "Intelligence Artificielle",
-      icon: Brain,
-      skills: [
-        "Machine Learning",
-        "TensorFlow",
-        "OpenAI GPT",
-        "Computer Vision",
-        "NLP",
-        "Pandas",
-      ],
-    },
-    {
-      title: "Mobile & IoT",
-      icon: Smartphone,
-      skills: [
-        "React Native",
-        "Flutter",
-        "Arduino",
-        "Raspberry Pi",
-        "MQTT",
-        "InfluxDB",
-      ],
-    },
-  ]
-
-  const certifications = [
-    {
-      name: "AWS Solutions Architect",
-      level: "Professional",
-      team: "Alexandre, Thomas",
-    },
-    { name: "React Developer", level: "Expert", team: "Marie, Sophie" },
-    {
-      name: "Google Cloud Platform",
-      level: "Professional",
-      team: "Thomas, Alexandre",
-    },
-    { name: "Microsoft Azure", level: "Associate", team: "Marie, Alexandre" },
-    { name: "Scrum Master", level: "Certified", team: "Équipe complète" },
-    { name: "ANSM Compliance", level: "Specialist", team: "Équipe complète" },
-  ]
-
-  const pharmaExpertise = [
-    "Réglementation ANSM & European Medicines Agency",
-    "Bonnes Pratiques de Distribution (GDP)",
-    "Validation de systèmes informatisés critiques",
-    "Traçabilité médicaments & sérialisation",
-    "Conformité RGPD santé & données sensibles",
-    "Intégrations ERP pharmacie (Pharmagest, Winpharma)",
-    "E-commerce pharmaceutique réglementé",
-    "Workflow officine & ergonomie métier",
-  ]
-
-  const timeline = [
-    {
-      year: "2019",
-      achievement: "Première certification AWS équipe",
-      impact: "Architecture cloud maîtrisée",
-    },
-    {
-      year: "2020",
-      achievement: "Spécialisation secteur pharmaceutique",
-      impact: "Expertise métier approfondie",
-    },
-    {
-      year: "2021",
-      achievement: "Certification conformité ANSM",
-      impact: "Solutions 100% conformes",
-    },
-    {
-      year: "2022",
-      achievement: "Leadership IA secteur santé",
-      impact: "Projets ML innovants",
-    },
-    {
-      year: "2023",
-      achievement: "Équipe sénior complète",
-      impact: "Autonomie projets complexes",
-    },
-    {
-      year: "2024",
-      achievement: "200+ projets réalisés",
-      impact: "Expertise reconnue marché",
-    },
-  ]
-
   return (
     <Section spacing="lg" background="transparent">
       <Container size="lg">
@@ -144,79 +36,39 @@ export function TeamSkills() {
         </motion.div>
 
         <div className="space-y-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Heading level={3} className="mb-6 text-center text-gray-900">
               Technologies Maîtrisées
             </Heading>
-            <Grid cols={1} responsive={{ md: 2, lg: 4 }} gap="md">
-              {techCategories.map(category => (
-                <SkillCategory key={category.title} {...category} />
-              ))}
-            </Grid>
-          </motion.div>
+            <SkillsCategories />
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Heading level={3} className="mb-6 text-center text-gray-900">
               Certifications Officielles
             </Heading>
-            <CertificationGrid certifications={certifications} />
-          </motion.div>
+            <SkillsCertifications />
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Heading
               level={3}
               className="phardev-gradient-text mb-6 text-center font-bold"
             >
               Expertise Pharmaceutique
             </Heading>
-            <Card variant="elevated">
-              <CardContent className="p-6">
-                <Grid cols={1} responsive={{ md: 2 }} gap="md">
-                  {pharmaExpertise.map(expertise => (
-                    <div key={expertise} className="flex items-start space-x-3">
-                      <Shield className="phardev-gradient-text mt-1 h-4 w-4 flex-shrink-0" />
-                      <Text
-                        variant="small"
-                        className="leading-relaxed text-gray-700"
-                      >
-                        {expertise}
-                      </Text>
-                    </div>
-                  ))}
-                </Grid>
-              </CardContent>
-            </Card>
-          </motion.div>
+            <SkillsExpertise />
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Heading
               level={3}
               className="phardev-gradient-text mb-6 text-center font-bold"
             >
               Timeline Succès Collectifs
             </Heading>
-            <SkillsTimeline milestones={timeline} />
-          </motion.div>
+            <SkillsTimeline />
+          </div>
         </div>
       </Container>
     </Section>

@@ -1,7 +1,7 @@
 "use client"
 
 import { Container, Section } from "@/components/layout"
-import { Button, Heading, Text } from "@/components/ui"
+import { Button, SectionHeader, StatsDisplay, Text } from "@/components/ui"
 import { motion } from "framer-motion"
 import {
   ArrowRight,
@@ -30,54 +30,23 @@ export function HeroSection() {
     <Section spacing="xl" background="gradient">
       <Container size="lg">
         <div className="text-center">
-          {/* Badge Hero */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
-          >
-            <div className="inline-flex items-center space-x-2 rounded-full border border-blue-200/50 bg-gradient-to-r from-blue-500/10 to-purple-500/10 px-4 py-2 backdrop-blur-sm">
-              <div className="flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-500">
-                <Zap className="h-2.5 w-2.5 text-white" />
-              </div>
-              <Text
-                variant="small"
-                className="phardev-gradient-text font-semibold"
-              >
-                #1 Solutions Innovation Pharmaceutique France
-              </Text>
-            </div>
-          </motion.div>
-
-          {/* Titre Principal */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-8"
-          >
-            <Heading
+          <SectionHeader.Root>
+            <SectionHeader.Badge icon={Zap}>
+              #1 Solutions Innovation Pharmaceutique France
+            </SectionHeader.Badge>
+            <SectionHeader.Title
               level={1}
-              className="mb-6 text-4xl leading-tight font-bold text-gray-900 lg:text-6xl"
+              className="text-4xl leading-tight font-bold text-gray-900 lg:text-6xl"
+              gradient={["expertise métier", "excellence technique"]}
             >
-              L&apos;alliance entre{" "}
-              <span className="phardev-gradient-text">expertise métier</span>
-              <br />
-              et{" "}
-              <span className="phardev-gradient-text">
-                excellence technique
-              </span>
-            </Heading>
-            <Text
-              variant="lead"
-              className="mx-auto max-w-3xl text-lg text-gray-600 lg:text-xl"
-            >
+              L&apos;alliance entre expertise métier et excellence technique
+            </SectionHeader.Title>
+            <SectionHeader.Description className="text-lg lg:text-xl">
               Transformez votre pharmacie avec nos solutions digitales
               innovantes. ROI garanti, conformité ANSM et accompagnement expert
               pour une croissance durable.
-            </Text>
-          </motion.div>
+            </SectionHeader.Description>
+          </SectionHeader.Root>
 
           {/* CTAs */}
           <motion.div
@@ -120,41 +89,14 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="rounded-2xl border border-white/30 bg-white/20 p-8 backdrop-blur-sm"
-          >
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-              {stats.map((stat, index) => {
-                const Icon = stat.icon
-                return (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
-                    className="text-center"
-                  >
-                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-md">
-                      <Icon className="phardev-gradient-text h-8 w-8" />
-                    </div>
-                    <Heading
-                      level={3}
-                      className="phardev-gradient-text mb-2 text-3xl font-bold"
-                    >
-                      {stat.value}
-                    </Heading>
-                    <Text variant="small" className="text-gray-600">
-                      {stat.label}
-                    </Text>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </motion.div>
+          {/* Stats avec StatsDisplay */}
+          <StatsDisplay
+            stats={stats}
+            variant="cards"
+            cols={3}
+            delay={0.8}
+            stagger={0.1}
+          />
         </div>
       </Container>
     </Section>

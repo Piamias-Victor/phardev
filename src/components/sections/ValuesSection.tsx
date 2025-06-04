@@ -1,8 +1,12 @@
 "use client"
 
-import { Container, Grid, Section } from "@/components/layout"
-import { Card, CardContent, CardHeader, Heading, Text } from "@/components/ui"
-import { motion } from "framer-motion"
+import { Container, Section } from "@/components/layout"
+import {
+  AnimatedGrid,
+  CardWithIcon,
+  SectionHeader,
+  Text,
+} from "@/components/ui"
 import { Brain, CheckCircle, Rocket, TrendingUp } from "lucide-react"
 
 export function ValuesSection() {
@@ -45,80 +49,38 @@ export function ValuesSection() {
   return (
     <Section spacing="lg" background="transparent">
       <Container size="lg">
-        {/* Header Section Standardisé */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center"
-        >
-          <Heading level={2} variant="default" className="mb-4">
-            Les 3 Piliers de l&apos;
-            <span className="phardev-gradient-text">Excellence Phardev</span>
-          </Heading>
-          <Text variant="lead" className="mx-auto max-w-2xl text-gray-600">
+        <SectionHeader.Root>
+          <SectionHeader.Title gradient={["Excellence Phardev"]}>
+            Les 3 Piliers de l&apos;Excellence Phardev
+          </SectionHeader.Title>
+          <SectionHeader.Description>
             Notre approche unique combine expertise pharmaceutique, innovation
             technologique et résultats mesurables pour transformer durablement
             votre activité.
-          </Text>
-        </motion.div>
+          </SectionHeader.Description>
+        </SectionHeader.Root>
 
-        {/* Cards Grid Harmonisé */}
-        <Grid cols={1} responsive={{ md: 2, lg: 3 }} gap="lg">
-          {pillars.map((pillar, index) => {
-            const Icon = pillar.icon
-            return (
-              <motion.div
-                key={pillar.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card variant="elevated" hoverable className="group h-full">
-                  <CardHeader>
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 transition-transform duration-200 group-hover:scale-105">
-                      <Icon className="phardev-gradient-text h-6 w-6" />
-                    </div>
-                    <Heading
-                      level={3}
-                      className="phardev-gradient-text mb-3 text-gray-900 transition-colors duration-200"
-                    >
-                      {pillar.title}
-                    </Heading>
-                  </CardHeader>
-
-                  <CardContent>
-                    <Text
-                      variant="body"
-                      className="mb-4 leading-relaxed text-gray-600"
-                    >
-                      {pillar.description}
+        <AnimatedGrid cols={1} responsive={{ md: 2, lg: 3 }} gap="lg">
+          {pillars.map(pillar => (
+            <CardWithIcon
+              key={pillar.title}
+              icon={pillar.icon}
+              title={pillar.title}
+              description={pillar.description}
+            >
+              <div className="space-y-2">
+                {pillar.features.map(feature => (
+                  <div key={feature} className="flex items-center space-x-2">
+                    <CheckCircle className="h-4 w-4 flex-shrink-0 text-green-500" />
+                    <Text variant="small" className="font-medium text-gray-700">
+                      {feature}
                     </Text>
-
-                    <div className="space-y-2">
-                      {pillar.features.map(feature => (
-                        <div
-                          key={feature}
-                          className="flex items-center space-x-2"
-                        >
-                          <CheckCircle className="h-4 w-4 flex-shrink-0 text-green-500" />
-                          <Text
-                            variant="small"
-                            className="font-medium text-gray-700"
-                          >
-                            {feature}
-                          </Text>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            )
-          })}
-        </Grid>
+                  </div>
+                ))}
+              </div>
+            </CardWithIcon>
+          ))}
+        </AnimatedGrid>
       </Container>
     </Section>
   )
